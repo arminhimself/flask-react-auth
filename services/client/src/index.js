@@ -63,11 +63,11 @@ class App extends Component {
                             <h1 className="title is-1">Users</h1>
                             <hr /><br />
                             <AddUser
-                                username={this.state.username}
-                                email={this.state.email}
-                                addUser={this.addUser}
-                                // eslint-disable-next-line react/jsx-handler-names
-                                handleChange={this.handleChange}
+                              username={this.state.username}
+                              email={this.state.email}
+                              addUser={this.addUser}
+                              // eslint-disable-next-line react/jsx-handler-names
+                              handleChange={this.handleChange}
                             />
                             <br /><br />
                             <UsersList users={this.state.users} />

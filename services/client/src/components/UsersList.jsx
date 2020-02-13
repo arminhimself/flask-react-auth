@@ -8,8 +8,8 @@ const UsersList = (props) => {
                 props.users.map((user) => {
                     return (
                         <p
-                            key={user.id}
-                            className="box title is-4 username"
+                          key={user.id}
+                          className="box title is-4 username"
                         >
                             {user.username}
                         </p>
