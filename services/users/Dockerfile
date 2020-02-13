@@ -3,9 +3,9 @@ FROM python:3.8.0-alpine
 
 # install dependencies
 RUN apk update && \
-    apk add --virtual build-deps gcc python-dev musl-dev && \
-    apk add postgresql-dev && \
-    apk add netcat-openbsd
+    apk add --no-cache --virtual build-deps \
+    openssl-dev libffi-dev gcc python3-dev musl-dev \
+    postgresql-dev netcat-openbsd
 
 # set environment varibles
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -16,7 +16,7 @@ WORKDIR /usr/src/app
 
 # add and install requirements
 COPY ./requirements.txt /usr/src/app/requirements.txt
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # add entrypoint.sh
 COPY ./entrypoint.sh /usr/src/app/entrypoint.sh

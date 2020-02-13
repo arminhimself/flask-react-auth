@@ -4,11 +4,11 @@ services:
 
   users:
     build:
-      context: .
+      context: ./services/users  # updated
       dockerfile: Dockerfile
     entrypoint: ['/usr/src/app/entrypoint.sh']
     volumes:
-      - '.:/usr/src/app'
+      - './services/users:/usr/src/app'  # updated
     ports:
       - 5001:5000
     environment:
@@ -21,10 +21,11 @@ services:
 
   users-db:
     build:
-      context: ./project/db
+      context: ./services/users/project/db  # updated
       dockerfile: Dockerfile
     expose:
       - 5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      
