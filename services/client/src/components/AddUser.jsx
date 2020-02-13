@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 const AddUser = (props) => {
     return (
@@ -43,5 +44,12 @@ const AddUser = (props) => {
         </form>
     )
 };
+
+AddUser.propTypes = {
+    username: propTypes.string.isRequired,
+    email: propTypes.string.isRequired,
+    handleChange: propTypes.func.isRequired,
+    addUser: propTypes.func.isRequired,
+}
 
 export default AddUser;
