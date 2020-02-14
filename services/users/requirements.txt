@@ -12,3 +12,4 @@ pytest-cov==2.8.1
 pytest-xdist==1.30.0
 Werkzeug==0.16.1
 flask-cors==3.0.8
+flask-bcrypt==0.7.1
