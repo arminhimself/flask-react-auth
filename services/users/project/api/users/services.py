@@ -1,4 +1,4 @@
-# project/api/services.py
+# services/users/project/api/services.py
 
 
 from project import db
@@ -10,7 +10,6 @@ def get_all_users():
 
 
 def get_user_by_id(user_id):
-    print(user_id)
     t = User.query.filter_by(id=user_id).first()
     return t
 

@@ -1,4 +1,4 @@
-# project/tests/test_users.py
+# services/users/project/tests/test_users.py
 
 
 import json
@@ -157,7 +157,7 @@ def test_update_user(test_app, test_database, add_user):
     assert "me@testdriven.io" in data["email"]
 
 
-def test_update_user_with_password(test_app, test_database, add_user):
+def test_update_user_with_passord(test_app, test_database, add_user):
     password_one = "greaterthaneight"
     password_two = "somethingdifferent"
 

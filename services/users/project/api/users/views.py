@@ -1,4 +1,4 @@
-# project/api/users/views.py
+# services/users/project/api/users/views.py
 
 
 from flask import request
@@ -68,7 +68,7 @@ class Users(Resource):
             users_namespace.abort(404, f"User {user_id} does not exist")
         return user, 200
 
-    @users_namespace.expect(user_post, validate=True)
+    @users_namespace.expect(user, validate=True)
     @users_namespace.response(200, "<user_is> was updated!")
     @users_namespace.response(404, "User <user_id> does not exist")
     def put(self, user_id):
@@ -76,13 +76,12 @@ class Users(Resource):
         post_data = request.get_json()
         username = post_data.get("username")
         email = post_data.get("email")
-        password = post_data.get("password")
         response_object = {}
 
         user = get_user_by_id(user_id)
         if not user:
             users_namespace.abort(404, f"User {user_id} does not exist")
-        add_user(username, email, password)
+        update_user(user, username, email)
         response_object["message"] = f"{user.id} was updated!"
         return response_object, 200
 
