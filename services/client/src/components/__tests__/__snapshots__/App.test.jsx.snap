@@ -37,15 +37,10 @@ exports[`renders 1`] = `
           >
             <a
               class="navbar-item"
+              data-testid="nav-about"
               href="/about"
             >
               About
-            </a>
-            <a
-              class="navbar-item"
-              href="/status"
-            >
-              User Status
             </a>
           </div>
           <div
@@ -53,21 +48,17 @@ exports[`renders 1`] = `
           >
             <a
               class="navbar-item"
+              data-testid="nav-register"
               href="/register"
             >
               Register
             </a>
             <a
               class="navbar-item"
+              data-testid="nav-login"
               href="/login"
             >
               Log In
-            </a>
-            <a
-              class="navbar-item"
-              href="/logout"
-            >
-              Log Out
             </a>
           </div>
         </div>
@@ -94,54 +85,34 @@ exports[`renders 1`] = `
               </h1>
               <hr />
               <br />
-              <form>
-                <div
-                  class="field"
-                >
-                  <label
-                    class="label is-large"
-                    for="input-username"
-                  >
-                    Username
-                  </label>
-                  <input
-                    class="input is-large"
-                    id="input-username"
-                    name="username"
-                    placeholder="Enter a username"
-                    required=""
-                    type="text"
-                    value=""
-                  />
-                </div>
-                <div
-                  class="field"
-                >
-                  <label
-                    class="label is-large"
-                    for="input-email"
-                  >
-                    Email
-                  </label>
-                  <input
-                    class="input is-large"
-                    id="input-email"
-                    name="email"
-                    placeholder="Enter an email address"
-                    required=""
-                    type="email"
-                    value=""
-                  />
-                </div>
-                <input
-                  class="button is-primary is-large is-fullwidth"
-                  type="submit"
-                  value="Submit"
-                />
-              </form>
+              <button
+                class="button is-primary"
+              >
+                Add User
+              </button>
               <br />
               <br />
-              <div />
+              <div>
+                <table
+                  class="table is-hoverable is-fullwidth"
+                >
+                  <thead>
+                    <tr>
+                      <th>
+                        ID
+                      </th>
+                      <th>
+                        Email
+                      </th>
+                      <th>
+                        Username
+                      </th>
+                      <th />
+                    </tr>
+                  </thead>
+                  <tbody />
+                </table>
+              </div>
             </div>
           </div>
         </div>
