@@ -26,8 +26,8 @@ def test_add_user(test_app, monkeypatch):
         "/users",
         data=json.dumps(
             {
-                "username": "michael",
-                "email": "michael@testdriven.io",
+                "username": "armin",
+                "email": "armin.babaei@gmail.com",
                 "password": "greaterthaneight",
             }
         ),
@@ -74,8 +74,8 @@ def test_add_user_duplicate_email(test_app, monkeypatch):
         "/users",
         data=json.dumps(
             {
-                "username": "michael",
-                "email": "michael@testdriven.io",
+                "username": "armin",
+                "email": "armin.babaei@gmail.com",
                 "password": "greaterthaneight",
             }
         ),
@@ -85,8 +85,8 @@ def test_add_user_duplicate_email(test_app, monkeypatch):
         "/users",
         data=json.dumps(
             {
-                "username": "michael",
-                "email": "michael@testdriven.io",
+                "username": "armin",
+                "email": "armin.babaei@gmail.com",
                 "password": "greaterthaneight",
             }
         ),
@@ -101,8 +101,8 @@ def test_single_user(test_app, monkeypatch):
     def mock_get_user_by_id(user_id):
         return {
             "id": 1,
-            "username": "jeffrey",
-            "email": "jeffrey@testdriven.io",
+            "username": "leanne",
+            "email": "leannegreentree10@gmail.com",
             "created_date": datetime.now(),
         }
 
@@ -111,8 +111,8 @@ def test_single_user(test_app, monkeypatch):
     resp = client.get("/users/1")
     data = json.loads(resp.data.decode())
     assert resp.status_code == 200
-    assert "jeffrey" in data["username"]
-    assert "jeffrey@testdriven.io" in data["email"]
+    assert "leanne" in data["username"]
+    assert "leannegreentree10@gmail.com" in data["email"]
     assert "password" not in data
 
 
@@ -133,8 +133,8 @@ def test_all_users(test_app, monkeypatch):
         return [
             {
                 "id": 1,
-                "username": "michael",
-                "email": "michael@mherman.org",
+                "username": "armin",
+                "email": "armin.babaei@icloud.com",
                 "created_date": datetime.now(),
             },
             {
@@ -151,8 +151,8 @@ def test_all_users(test_app, monkeypatch):
     data = json.loads(resp.data.decode())
     assert resp.status_code == 200
     assert len(data) == 2
-    assert "michael" in data[0]["username"]
-    assert "michael@mherman.org" in data[0]["email"]
+    assert "armin" in data[0]["username"]
+    assert "armin.babaei@icloud.com" in data[0]["email"]
     assert "fletcher" in data[1]["username"]
     assert "fletcher@notreal.com" in data[1]["email"]
     assert "password" not in data[0]

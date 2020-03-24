@@ -30,7 +30,7 @@ def test_user_registration_duplicate_email(test_app, test_database, add_user):
     resp = client.post(
         "/auth/register",
         data=json.dumps(
-            {"username": "michael", "email": "test@test.com", "password": "test"}
+            {"username": "armin", "email": "test@test.com", "password": "test"}
         ),
         content_type="application/json",
     )
@@ -45,8 +45,8 @@ def test_user_registration_duplicate_email(test_app, test_database, add_user):
     [
         [{}],
         [{"email": "me@testdriven.io", "password": "greaterthanten"}],
-        [{"username": "michael", "password": "greaterthanten"}],
-        [{"email": "me@testdriven.io", "username": "michael"}],
+        [{"username": "armin", "password": "greaterthanten"}],
+        [{"email": "me@testdriven.io", "username": "armin"}],
     ],
 )
 def test_user_registration_invalid_json(test_app, test_database, payload):

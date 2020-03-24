@@ -8,14 +8,14 @@ afterEach(cleanup);
 
 const users = [
   {
-    email: "hermanmu@gmail.com",
+    email: "armin.babaei@gmail.com",
     id: 1,
-    username: "michael"
+    username: "armin"
   },
   {
-    email: "michael@mherman.org",
+    email: "armin.babaei@icloud.com",
     id: 2,
-    username: "michaelherman"
+    username: "arminhimself"
   }
 ];
 
@@ -27,8 +27,8 @@ it("renders a username", () => {
       isAuthenticated={() => true}
     />
   );
-  expect(getByText("michael")).toHaveClass("username");
-  expect(getByText("michaelherman")).toHaveClass("username");
+  expect(getByText("armin")).toHaveClass("username");
+  expect(getByText("arminhimself")).toHaveClass("username");
 });
 
 it("renders", () => {
