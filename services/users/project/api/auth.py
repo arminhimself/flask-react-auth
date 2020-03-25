@@ -3,7 +3,7 @@
 
 import jwt
 from flask import request
-from flask_restplus import Namespace, Resource, fields
+from flask_restx import Namespace, Resource, fields
 
 from project import bcrypt
 from project.api.users.models import User

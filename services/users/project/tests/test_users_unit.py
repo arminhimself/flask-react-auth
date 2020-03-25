@@ -35,7 +35,7 @@ def test_add_user(test_app, monkeypatch):
     )
     data = json.loads(resp.data.decode())
     assert resp.status_code == 201
-    assert "michael@testdriven.io was added!" in data["message"]
+    assert "armin.babaei@gmail.com was added!" in data["message"]
 
 
 def test_add_user_invalid_json(test_app):

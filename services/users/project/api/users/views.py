@@ -2,7 +2,7 @@
 
 
 from flask import request
-from flask_restplus import Resource, fields, Namespace
+from flask_restx import Resource, fields, Namespace
 
 from project.api.users.services import (
     get_all_users,
